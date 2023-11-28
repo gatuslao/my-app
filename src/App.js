@@ -1,22 +1,30 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import Header from './header';
 
 function App() {
+
+  function receiveHeaderClick(todoText) {
+    console.log("Now we're in the parent component!");
+    console.log(todoText);
+    // Make AJAX call in parent component
+  }
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Header randomnumber="15" 
+        Text="Hello World!"
+        receiveHeaderClick={receiveHeaderClick}
+        />
+
+        {/* <Todo 
+        handleDelete={handleDelete}
+        handleComplete={handleComplete}
+        id={some-id-value}
+        text={some-text-value}
+        /> */}
+
       </header>
     </div>
   );
